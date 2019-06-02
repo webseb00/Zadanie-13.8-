@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var imgPath = 'https://voidcoders.com/wp-content/uploads/2018/09/featured-404-error-image.png';
+var remoteImgPath = 'https://www.lifewire.com/thmb/tP-WiDIt-ihlQB7LF_RTHzTrjng=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/404-not-found-error-explained-2622936-Final-387df77f30dd4c9d805012c2ba13fbc5.png';
 var server = http.createServer();
 
 server.on('request', function(request, response) {
@@ -14,7 +14,7 @@ server.on('request', function(request, response) {
 	} else {
 		response.statusCode = 404;
 		response.write('<body>');
-		response.write('<img class="img-fluid" src="' + imgPath + '"/>');
+		response.write('<img src="' + remoteImgPath + '"/>');
 		response.write('</body>');
 		response.end();
 	}
